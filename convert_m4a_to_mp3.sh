@@ -6,8 +6,12 @@
 # I do this regularly with mixcloud downloaded mixes. I don't want to manual 
 # steps
 # 
-#
-# Bash style following https://github.com/bahamas10/bash-style-guide#bashisms
+# Tips
+# ----
+# Run this as a batch:
+# find *.m4a | xargs -d "\n" -I thefile convert_m4a_to_mp3.sh thefile
+# (-d "\n") to make sure filenames with spaces and dashes do not cause trouble
+# 
 # =============================================================================
 
 usage="Usage: $(basename "$0") [-h] MP4_FILE
@@ -44,5 +48,5 @@ extension="${full_filename##*.}"
 filename="${full_filename%.*}"
 output_file="$base_path/$filename.mp3"
 
-ffmpeg -i "$input_file" -ac 2 -ab 192k "$output_file"
+ffmpeg -i "$input_file" -y -ac 2 -ab 192k "$output_file"
 
