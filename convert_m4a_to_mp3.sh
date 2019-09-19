@@ -44,6 +44,5 @@ extension="${full_filename##*.}"
 filename="${full_filename%.*}"
 output_file="$base_path/$filename.mp3"
 
-echo $output_file
+ffmpeg -i "$input_file" -ac 2 -ab 192k "$output_file"
 
-ffmpeg -i $input_file -ac 2 -ab 192k $output_file
