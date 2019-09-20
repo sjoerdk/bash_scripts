@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # 
 # =============================================================================
-# Concert an m4a file to mp3
+# Convert an m4a file to mp3
 #
 # I do this regularly with mixcloud downloaded mixes. I don't want to manual 
 # steps
