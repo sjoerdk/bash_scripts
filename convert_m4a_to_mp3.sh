@@ -3,14 +3,16 @@
 # =============================================================================
 # Convert an m4a file to mp3
 #
-# I do this regularly with mixcloud downloaded mixes. I don't want to manual 
+# I do this regularly with mixcloud downloaded mixes. I don't want manual 
 # steps
 # 
 # Tips
 # ----
 # Run this as a batch:
 # find *.m4a | xargs -d "\n" -I thefile convert_m4a_to_mp3.sh thefile
-# (-d "\n") to make sure filenames with spaces and dashes do not cause trouble
+# 
+# (-d "\n") sets xargs delimiter to newline to make sure filenames with 
+# spaces, dashes and hyphens do not cause trouble
 # 
 # =============================================================================
 
