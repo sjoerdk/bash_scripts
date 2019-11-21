@@ -9,9 +9,28 @@ Installation
 These are all meant to be installed with stow: https://www.gnu.org/software/stow
 
 Preparation::
+  $ sudo apt-get stow        
 
-  $ mkdir /usr/local/stow
-  $ 
+  $ mkdir /usr/local/stow    (optional: change permissions to allow non-root writing)
+  $ cd /usr/local/stow
+  $ git clone git@github.com:sjoerdk/bash_scripts.git
+  
 
+See available scripts::
+  
+  $ ls /usr/loca/stow/bash_scripts
+
+  
+To install a script::
+    
+  $ sudo stow <script name> --target=/usr/local
+  
+  The script name is just the directory name stow/bash_scripts. For example:    
+  $ sudo stow sync_walkman --target=/usr/local
+
+  
+To uninstall a script::
+      
+  $ sudo stow --delete <script name> --target=/usr/local
 
   
