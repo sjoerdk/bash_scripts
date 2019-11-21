@@ -17,6 +17,14 @@
 # rsync
 # notify-send
 #
+# Installation
+# ------------
+# To make this script runnable
+# 
+# $ git clone git@github.com:sjoerdk/bash_scripts.git
+# $ cd bash_scripts
+# $ sudo ln -s $(pwd)/sync_walkman.sh /usr/local/bin/sync_walkman.sh
+#
 # =============================================================================
 
 local_dir=/home/sjoerdk/Music/WALKMAN
