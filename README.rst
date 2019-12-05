@@ -18,11 +18,12 @@ Preparation::
 
 See available scripts::
   
-  $ ls /usr/loca/stow/bash_scripts
+  $ ls /usr/local/stow/bash_scripts
 
   
 To install a script::
-    
+  
+  $ cd /usr/local/stow/bash_scripts
   $ sudo stow <script name> --target=/usr/local
   
   The script name is just the directory name stow/bash_scripts. For example:    
@@ -30,7 +31,8 @@ To install a script::
 
   
 To uninstall a script::
-      
+  
+  $ cd /usr/local/stow/bash_scripts
   $ sudo stow --delete <script name> --target=/usr/local
 
   
