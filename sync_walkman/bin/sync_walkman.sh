@@ -11,6 +11,8 @@
 # --update                skip files that are newer on the receiver
 # --times                 preserve modification times
 # --verbose               increase verbosity
+# --size-only             Compare files on size and name only. Speeds up sync
+#                             
 # 
 # Requirements
 # ------------
@@ -23,13 +25,13 @@
 # 
 # $ git clone git@github.com:sjoerdk/bash_scripts.git
 # $ cd bash_scripts
-# $ sudo ln -s $(pwd)/sync_walkman.sh /usr/local/bin/sync_walkman.sh
+# $ sudo stow sync_walkman --target=/usr/local
 #
 # =============================================================================
 
 local_dir=/home/sjoerdk/Music/WALKMAN
 walkman_dir=/media/sjoerdk/WALKMAN
-rsync_options='--recursive --update --times --verbose'
+rsync_options='--recursive --update --times --verbose --size-only'
 
 do_sync () {
   input_dir=$1
