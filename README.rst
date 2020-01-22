@@ -10,7 +10,7 @@ These are all meant to be installed with stow: https://www.gnu.org/software/stow
 
 Preparation::
 
-  $ sudo apt-get stow        
+  $ sudo apt-get install stow        
   $ mkdir /usr/local/stow    (optional: change permissions to allow non-root writing)
   $ cd /usr/local/stow
   $ git clone git@github.com:sjoerdk/bash_scripts.git
