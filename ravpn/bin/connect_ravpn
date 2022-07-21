@@ -1,0 +1,28 @@
+#!/bin/bash
+
+echo Attempting to get sudo...
+sudo echo
+echo Sudo got! Please enter the VPN password:
+
+f5fpc -s -x -t https://ravpn.radboudumc.nl:443 -u z000000  # YOUR Z-NUMBER HERE
+
+i=20
+established=1
+while [ $i -gt 0 ] ; do 
+    sleep 1
+    f5fpc --info | grep 'vpn *established.*/Common/Unmanaged' > /dev/null
+    established=$?
+    if [ $established -eq 0 ]; then
+        break;
+    fi
+    
+    i=$[ $i - 1 ]
+done
+
+if [ $established -eq 0 ] ; then
+
+    sudo ip route add 172.17.0.0/16 dev docker0 src 172.17.0.1
+
+fi
+
+f5fpc --info
